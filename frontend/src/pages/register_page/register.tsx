@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 import MainForm from '../../components/form/mainForm';
 import { useEffect, useState } from 'react';
 import { Alert, Form, Modal } from 'react-bootstrap';
-import Spinner from 'react-bootstrap/Spinner';
-import MainButton from '../../components/button/mainButton';
 import PopUp from '../../components/popUp/popUp';
 const Register = () => {
+  //#region states
   const [inputs, setInputs] = useState({
     firstName: "",
     secondName: "",
@@ -22,6 +21,7 @@ const Register = () => {
   const [userCreatedResponse, setUserCreatedResponse] = useState(null)
   const [showWaitingMessage, setShowWaitingMessage] = useState(false)
   const [showAcceptingMessage, setShowAcceptingMessage] = useState(false)
+  //#endregion
 
   //#region life cycle methods
   useEffect(() => {
@@ -30,7 +30,7 @@ const Register = () => {
       console.log(userCreatedResponse, showAcceptingMessage, showWaitingMessage)
     }
   }, [userCreatedResponse])
-  //#endregiom
+  //#endregion
 
   //#region form functions
   const updateInput: any = (inputAttribute: any) => (event: any) =>{
@@ -70,7 +70,7 @@ const Register = () => {
           }
         }
       `;
-        const response = await fetch('http://localhost:3000/graphql', {
+        const response = await fetch(import.meta.env.VITE_BACKEND_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: mutation }),
