@@ -37,8 +37,11 @@ const PopUp = (props: any) => {
         }
       </Modal.Body>
       <Modal.Footer>
-        <MainButton buttonText="Alright!" handleClick={props.buttonFunction}>
-        </MainButton>
+        {
+          props.noButton
+          ? <></>
+          :  <MainButton buttonText="Alright!" handleClick={props.buttonFunction} />
+        }
       </Modal.Footer>
     </Modal>
   )
