@@ -1,0 +1,15 @@
+.mainArea {
+  position: absolute;
+  top: 53%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+}
+
+.fontStyle {
+  font-family: 'SF Pro Text';
+}
+
+.twoItemsArea {
+  display: flex;
+  justify-content: space-between
+}

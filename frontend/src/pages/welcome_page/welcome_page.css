@@ -1,0 +1,32 @@
+.welcomePage {
+  background-image: url('../../assets/spices-25486531.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  margin-top: -69.5px;
+}
+
+.main-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -250px;
+  margin-left: 150px; 
+}
+
+.main-heading .text {
+  color: #E5E5E5;
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 121px;
+}
+
+.button-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -300px; 
+}
