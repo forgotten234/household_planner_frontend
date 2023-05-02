@@ -4,7 +4,7 @@ import { createContext, useState, useEffect } from 'react';
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }: any) => {
-  const [auth, setAuth] = useState({ loading: true, data: null });
+  const [auth, setAuth] = useState({ loading: true, data: JSON.parse(window.localStorage.getItem('authData')!) });
 
   const setAuthData = (data: any) => {
     setAuth({...auth, data: data});

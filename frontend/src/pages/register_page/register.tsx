@@ -70,7 +70,7 @@ const Register = () => {
           }
         }
       `;
-        const response = await fetch(import.meta.env.VITE_BACKEND_URL, {
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: mutation }),

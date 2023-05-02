@@ -12,7 +12,7 @@ const WelcomePage = () => {
         <div className='text'>Household Planner</div>
       </div>
       <div className='button-area'>
-          <MainButton buttonText={"Register now"} handleClick={() => navigator("/register")}/>
+        <MainButton buttonText={"Register now"} handleClick={() => navigator("/register")}/>
       </div>
     </div>
   )
