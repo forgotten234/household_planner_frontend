@@ -7,7 +7,6 @@ import { useContext, useState } from 'react';
 import {AuthContext} from '../../contexts/AuthContext';
 import PopUp from '../../components/popUp/popUp';
 
-//TODO: update route
 const LoginPage = () => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -43,6 +42,7 @@ const LoginPage = () => {
             id
             user_name
             email
+            role
           }
           message
         }
@@ -61,6 +61,7 @@ const LoginPage = () => {
         token: responseData.data.login.token,
         user_name: responseData.data.login.user.user_name,
         email: responseData.data.login.user.email,
+        role: responseData.data.login.user.role
       })
       navigator("/")
     }
