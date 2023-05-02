@@ -6,6 +6,8 @@ import MainForm from '../../components/form/mainForm';
 import { useContext, useState } from 'react';
 import {AuthContext} from '../../contexts/AuthContext';
 import PopUp from '../../components/popUp/popUp';
+
+//TODO: update route
 const LoginPage = () => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -53,10 +55,14 @@ const LoginPage = () => {
     });
     const responseData = await response.json();
     console.log(responseData)
-    if(responseData.data.message === "Login successful") {
+    if(responseData.data.login.message === "Login successful") {
       setShowWaitingMessage(prevState => false)
-      setAuthData(responseData)
-      navigator("/welcome-page")
+      setAuthData({
+        token: responseData.data.login.token,
+        user_name: responseData.data.login.user.user_name,
+        email: responseData.data.login.user.email,
+      })
+      navigator("/")
     }
     else setShowErrorMessage(prevState => true)
   }

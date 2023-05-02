@@ -13,9 +13,9 @@ const MainForm = (props: any) => {
           props.checkboxText 
           ? <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" 
-              label={props.checkboxText} 
-              style={{fontFamily: 'SF Pro Text'}}
-              onChange={props.checkBoxFunction}/>
+                label={props.checkboxText} 
+                style={{fontFamily: 'SF Pro Text'}}
+                onChange={props.checkBoxFunction}/>
             </Form.Group>
           : <></>
         }
