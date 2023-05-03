@@ -10,6 +10,11 @@ import LoginPage from './pages/login_page/login'
 import WelcomePage from './pages/welcome_page/welcomePage'
 import Register from './pages/register_page/register'
 import SettingsPage from './pages/settings_page/settingsPage'
+import DashboardPage from './pages/dashboard_page/dashboardPage'
+import ShoppinglistPage from './pages/shopping_list_page/shoppingListPage'
+import BankBalancePage from './pages/bank_balance_page/bankBalancePage'
+import CalenderPage from './pages/calender_page/calenderPage'
+import StatisticPage from './pages/statistic_page/statisticPage'
 function App() {
   return (
     <div>
@@ -21,6 +26,31 @@ function App() {
           <Route path="/settings" element={
             <PrivateRoute>
               <SettingsPage />
+            </PrivateRoute>
+          }/>
+          <Route path="/dashboard" element={
+            <PrivateRoute>
+              <DashboardPage />
+            </PrivateRoute>
+          }/>
+          <Route path="/shoppinglist" element={
+            <PrivateRoute>
+              <ShoppinglistPage />
+            </PrivateRoute>
+          }/>
+          <Route path="/bankbalance" element={
+            <PrivateRoute>
+              <BankBalancePage />
+            </PrivateRoute>
+          }/>
+          <Route path="/calender" element={
+            <PrivateRoute>
+              <CalenderPage />
+            </PrivateRoute>
+          }/>
+          <Route path="/statistic" element={
+            <PrivateRoute>
+              <StatisticPage />
             </PrivateRoute>
           }/>
           <Route path="/" element={<WelcomePage />}/>
