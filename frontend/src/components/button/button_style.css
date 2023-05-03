@@ -2,8 +2,9 @@
   background: #A49956;
   border: 5px solid #A49956;
   border-radius: 5px;
-  width: 300px;
-  height: 50px;
+  width: 150px;
+  height: 40px;
+  margin-right: 5px;
 }
 
 .button-style .text {

@@ -1,0 +1,111 @@
+.dashboardPage {
+  background-image: url('../../assets/spices-25486531.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  margin-top: -63px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.rectangleHeadline {
+  width: 100%;
+  height: 150px;
+  background: rgba(236, 236, 236, 0.75);
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.headline {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 75px;
+  line-height: 119px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.subheadline {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 90px;
+  letter-spacing: -0.02em;
+  margin-top: -50px;
+  color: #000000;
+}
+
+.rectangleNavigation {
+  width: 100%;
+  height: 225px;
+  background: rgba(236, 236, 236, 0.75);
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.grid-nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-nav-item {
+  flex-basis: calc(25% - 20px);
+  height: calc(90% - 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #333;
+  border: 1px solid #A49956;
+  border-radius: 5px; 
+  margin: 10px;
+  flex-direction: column;
+}
+
+.grid-nav-item-headline {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 140%;
+  /* or 39px */
+  
+  letter-spacing: -0.02em;
+  
+  /* Black */
+  
+  color: #1D1D1D;
+}
+
+.grid-nav-item-icon{
+  color: #A49956;
+  font-size: 110px
+}
+
+.grid-nav-item-icon-statistic{
+  color: #A49956;
+  font-size: 105px
+}

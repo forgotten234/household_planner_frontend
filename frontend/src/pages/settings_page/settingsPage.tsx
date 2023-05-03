@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import MainForm from '../../components/form/mainForm';
 import MainImage from '../../components/image/mainImage';
 import { Form, Alert } from 'react-bootstrap';
+import AccountDeletionArea from './childs/accountDeletionArea';
 
 const SettingsPage = () => {
   const [inputs, setInputs]: any = useState({
@@ -13,7 +14,7 @@ const SettingsPage = () => {
     confirmedPassword: "",
   })
   const { auth, setAuthData }: any = useContext(AuthContext);
-  const [showErrorMessageForm, setShowErrorMessageForm] = useState(false)
+  const [showMessageForm, setShowMessageForm] = useState({showForm: false, message: ""})
 
   const updateUser = async (event: any) => {
     if(inputs.password === inputs.confirmedPassword){
@@ -53,8 +54,9 @@ const SettingsPage = () => {
         const responseData = await response.json();
         console.log(response)
         console.log(responseData)
+        setShowMessageForm({showForm: true, message: "User updated!"})
     } else {
-      setShowErrorMessageForm(true)
+      setShowMessageForm({showForm: true, message: "Please fill in all necessary Fields!"})
     }
   }
 
@@ -64,11 +66,11 @@ const SettingsPage = () => {
     }
     else console.log("Something went wrong!")
   }
-
+  console.log(auth.data.role)
   return(
     <div className="settingsPage">
       <MainImage position='right'/>
-      <div className='mainArea'>
+      <div className={auth.data.role === "admin" ? 'mainAreaAdmin' : 'mainAreaUser'}>
         <MainForm heading={"Settings"} 
           subHeadline={"Change yourself."} 
           buttonText={"Confirm Changes"} 
@@ -107,15 +109,21 @@ const SettingsPage = () => {
                 onChange={updateInput("confirmedPassword")}/>
             </Form.Group> 
           </div> 
-      </MainForm>
-      </div>
-      {
-          showErrorMessageForm 
-          ? <Alert variant={'danger'} style={{marginTop: "15px"}}>
-              Please fill in all necessary fields!
+        </MainForm>
+        {
+          showMessageForm.showForm 
+          ? <Alert variant={showMessageForm.message === "User updated!" ? 'success' : 'danger'} style={{marginTop: "15px"}}>
+              {showMessageForm.message}
             </Alert>
           : <></>
         }
+        <br/>
+        {
+          auth.data.role === "admin"
+          ? <AccountDeletionArea />
+          : <></>
+        }
+      </div>
     </div>
   )
 }

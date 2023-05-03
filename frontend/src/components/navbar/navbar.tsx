@@ -12,6 +12,7 @@ const Navigationbar = () => {
 
   const logoutUser = () => {
     setAuthData(null)
+    navigator("/")
   }
 
   return (
@@ -32,7 +33,11 @@ const Navigationbar = () => {
             }
         </Nav>
         <Navbar.Brand>
-          <div className='navbarTextRight' onClick={() => navigator("/")}>
+          <div className='navbarTextRight' onClick={() => {
+              if(auth.data) navigator("/dashboard")
+              else navigator("/")
+            }
+          }>
             Household planner
           </div>
         </Navbar.Brand>

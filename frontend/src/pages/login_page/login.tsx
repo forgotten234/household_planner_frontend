@@ -7,7 +7,6 @@ import { useContext, useState } from 'react';
 import {AuthContext} from '../../contexts/AuthContext';
 import PopUp from '../../components/popUp/popUp';
 
-//TODO: update route
 const LoginPage = () => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -25,9 +24,11 @@ const LoginPage = () => {
     }
     else console.log("Something went wrong!")
   }
+
   const updateCheckboxInput: any = () => {
     setInputs({...inputs, rememberMe: !inputs.rememberMe})
   }
+
   const loginUser = async (event: any) => {
     event.preventDefault();
     setShowWaitingMessage(prevState => true)
@@ -43,6 +44,7 @@ const LoginPage = () => {
             id
             user_name
             email
+            role
           }
           message
         }
@@ -58,11 +60,13 @@ const LoginPage = () => {
     if(responseData.data.login.message === "Login successful") {
       setShowWaitingMessage(prevState => false)
       setAuthData({
+        id: responseData.data.login.user.id,
         token: responseData.data.login.token,
         user_name: responseData.data.login.user.user_name,
         email: responseData.data.login.user.email,
+        role: responseData.data.login.user.role
       })
-      navigator("/")
+      navigator("/dashboard")
     }
     else setShowErrorMessage(prevState => true)
   }
