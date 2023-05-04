@@ -10,7 +10,8 @@ import SaveListOffCanvas from './childs/saveListOffCanvas';
 import { IShoppingListItem } from '../../interfaces/IShoppingListItem';
 import LoadListOffCanvas from './childs/loadListOffCanvas';
 import DeleteListOffCanvas from './childs/deleteListOffCanvas';
-
+console.log(import.meta.env.VITE_BACKEND_URL)
+console.log(import.meta.env)
 const ShoppinglistPage = () => {
   const { auth, setAuthData }: any = useContext(AuthContext);
   const [selectedItem, setSelectedItem] = useState({
