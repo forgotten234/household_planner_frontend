@@ -94,7 +94,7 @@ const SettingsPage = () => {
                 onChange={updateInput("second_name")}/>
             </Form.Group> 
           </div>
-          <div id="passwordArea" className="twoItemsArea">
+          <div id="passwordArea" className="twoItemsArea" style={{marginTop: '-10px'}}>
             <Form.Group className="mb-3" controlId="formBasicPassword" style={{marginRight: '5px'}}>
               <Form.Label><div className='fontStyle'>Password</div></Form.Label>
               <Form.Control type="password" placeholder="Password" style={{fontFamily: 'SF Pro Text'}}

@@ -59,9 +59,9 @@ const AccountDeletionArea = () => {
   },[updatePage])
 
   return (
-    <div>
+    <div style={{marginTop: '-15px'}}>
       <h2 className='fontStyle'>Users</h2>
-      <div className='fontStyle' style={{marginBottom: '5px'}}>Change other</div>
+      <div className='fontStyle' style={{marginBottom: '5px', marginTop: '-10px'}}>Change other</div>
       <ListGroup style={{ maxHeight: '150px', overflowY: 'scroll' }}>
         {items.map((item) => (
           <ListGroup.Item
